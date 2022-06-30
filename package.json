@@ -7,5 +7,10 @@
     "json": "^11.0.0",
     "node-fetch": "^3.2.6",
     "url": "^0.11.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon ./index.js",
+    "start": "node index.js"
   }
 }
