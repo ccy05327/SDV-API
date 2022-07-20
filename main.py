@@ -3,7 +3,10 @@ from flask import Flask
 from flask_restful import Api, Resource
 import requests
 import json
+import os
 
+
+port = int(os.environ.get('PORT', 5000))
 
 def read_json(_file: str):
     '''
@@ -45,4 +48,4 @@ api.add_resource(record, "/")
 api.add_resource(past_record, "/<int:length>")
 
 if __name__ == '__main__':
-    app.run(debug=True, port=33507)
+    app.run(debug=True, port=port)
