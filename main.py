@@ -6,7 +6,7 @@ import json
 import os
 
 
-port = int(os.environ.get('PORT', 33507))
+port = int(os.environ.get('PORT'))
 
 def read_json(_file: str):
     '''
