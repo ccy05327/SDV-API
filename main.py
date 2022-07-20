@@ -45,4 +45,4 @@ api.add_resource(record, "/")
 api.add_resource(past_record, "/<int:length>")
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, port=33507)
