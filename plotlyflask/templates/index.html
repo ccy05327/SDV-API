@@ -17,19 +17,14 @@
             background-color: antiquewhite;
         }
 
-        @media (max-width: 576px) {
-            #buttons {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
+        @media (max-width: 576px) {}
 
-            #buttons>div {
-                margin: 5px 0 5px 0;
+        @media (max-width: 768px) {
+            #buttons {
+                /* margin-top: 1rem; */
+                /* max-width: 30rem; */
             }
         }
-
-        @media (max-width: 768px) {}
 
         @media (max-width: 992px) {}
     </style>
@@ -42,18 +37,37 @@
         </div>
     </nav>
     <div class="container-fluid container-sm padding">
-        <form class="row padding justify-content-center">
-            <!--  action="/plotlyflask/plotlydash/dashboard.py" method="get" -->
-            <div class=".col-md-6 .offset-md-3" style="max-width: 40rem">
+        <form class="row padding justify-content-center" id="form" method="post" action="/submit">
+            <div class=".col-3" style="max-width: 30rem">
                 <div class="input-group mb-3">
                     <span class="input-group-text">#</span>
                     <div class="form-floating">
-                        <input type="number" class="form-control" id="floatingInputGroup1"
-                            placeholder="Number of records">
+                        <input type="number" class="form-control" id="floatingInputGroup1" name="number_records" placeholder="Number of records">
                         <label for="floatingInputGroup1">Number of records</label>
                     </div>
                 </div>
             </div>
+            <div class=".col-3" style="max-width: 30rem">
+                <div class="row justify-content-center form-floating" style="min-width: 150px; max-width: 30rem;">
+                    <select class="form-select" id="floatingSelectGrid" name="format_selection">
+                        <option selected>Format</option>
+                        <option value="1">JSON</option>
+                        <option value="2">Image</option>
+                    </select>
+                    <label for="floatingSelectGrid">Select a format to display</label>
+                </div>
+            </div>
+            <div class=".col-1" id="buttons" style="margin: 10px 0 0 1rem; max-width: 100px">
+                <div class="row justify-content-center">
+                    <button type="submit" class="btn btn-outline-primary" id="">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <!-- <div class="text-center container-sm padding">
+
+    </div> -->
+    <!-- 
             <div class="row justify-content-center" id="buttons">
                 <div class="col-2">
                     <a href="/json/" class="dash-link">
@@ -66,22 +80,6 @@
                     </a>
                 </div>
             </div>
-        </form>
-    </div>
-    <div class="text-center container-sm padding">
-
-    </div>
-    <!-- 
-        <div class="col-md">
-                    <div class="form-floating">
-                        <select class="form-select" id="floatingSelectGrid">
-                            <option selected>Format</option>
-                            <option value="1">JSON</option>
-                            <option value="2">Image</option>
-                        </select>
-                        <label for="floatingSelectGrid">Select a format to display</label>
-                    </div>
-                </div>
      -->
 </body>
 
